@@ -1,0 +1,22 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "my twice project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarkJunior59/frontend-project-lvl2.git"
+  },
+  "keywords": [
+    "qwerty"
+  ],
+  "author": "Dark_Junior",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarkJunior59/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/DarkJunior59/frontend-project-lvl2#readme"
+}
