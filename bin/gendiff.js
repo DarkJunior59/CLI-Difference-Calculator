@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
-import { Command } from 'commander';
+import commander from 'commander';
 
-const program = new Command();
+const program = commander
+  .version('0.0.1', '-V, --version', 'output the version number')
+  .helpOption('-h, --HELP', 'output usage information')
+  .parse(process.argv);
 
-program
-    .version('0.0.1', '-V, --version', 'output the version number')
-    .helpOption('-h, --HELP', 'read more information');
-
-
-program.parse();
+export default program;
