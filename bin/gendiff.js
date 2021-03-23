@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
-import commander from 'commander';
+import program from 'commander';
 
-const program = commander
-  .version('0.0.1', '-V, --version', 'output the version number')
-  .helpOption('-h, --HELP', 'output usage information')
+program
+  .version('0.0.1')
+  .description('Compares two configuration files and shows a difference.')
+  .helpOption('-h, --help', 'output usage information')
+  .arguments('<filepath1> <filepath2>')
+  .option('-f, --format [type]',  'output format')
   .parse(process.argv);
 
 export default program;
