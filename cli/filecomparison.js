@@ -15,17 +15,18 @@ const genDiff = (file1, file2) => {
   const comparison = (string, key) => {
     let str = string;
     if (!_.has(data1, key)) {
-      str = `${str}\n+ ${key} : ${data2[key]}`;
+      str = `${str}\n  + ${key}: ${data2[key]}`;
     } else if (!_.has(data2, key)) {
-      str = `${str}\n- ${key} : ${data1[key]}`;
+      str = `${str}\n  - ${key}: ${data1[key]}`;
     } else if (data1[key] !== data2[key]) {
-      str = `${str}\n- ${key} : ${data1[key]}\n+ ${key} : ${data2[key]}`;
+      str = `${str}\n  - ${key}: ${data1[key]}\n  + ${key}: ${data2[key]}`;
     } else {
-      str = `${str}\n  ${key} : ${data1[key]}`;
+      str = `${str}\n    ${key}: ${data1[key]}`;
     }
     return str;
   };
-  return `${keys.reduce(comparison, '{')}\n}`;
+  const result = `${keys.reduce(comparison, '{')}\n}`;
+  return result;
 };
 
 export default genDiff;
