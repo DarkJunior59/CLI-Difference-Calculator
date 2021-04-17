@@ -5,9 +5,12 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "main": "bin/gendiff.js",
   "scripts": {
-    "test": "test jest"
+    "test": "npx jest --bail"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,10 @@
     "url": "https://github.com/DarkJunior59/frontend-project-lvl2/issues"
   },
   "type": "module",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
   "homepage": "https://github.com/DarkJunior59/frontend-project-lvl2#readme",
   "dependencies": {
     "commander": "^7.1.0",
