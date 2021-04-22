@@ -5,7 +5,13 @@
 [![Test workflow](https://github.com/DarkJunior59/frontend-project-lvl2/workflows/test/badge.svg)](https://github.com/DarkJunior59/frontend-project-lvl2/actions)
 
 ```sh 
-$ gendiff file1.json file2.json
+$ gendiff filepath1.json filepath1.json
 ```
 
-[![asciicast](https://asciinema.org/a/c6Ohj4sgJGZEaqCyYm8od92NH.svg)](https://asciinema.org/a/c6Ohj4sgJGZEaqCyYm8od92NH)
+[![asciicast](https://asciinema.org/a/iRr4TWK42jfvv5KIybDUa6oi5.svg)](https://asciinema.org/a/iRr4TWK42jfvv5KIybDUa6oi5)
+
+```sh 
+$ gendiff filepath1.yml filepath2.yml
+```
+
+[![asciicast](https://asciinema.org/a/XAWIgo5JvG3l5YvzxwX3WKEpm.svg)](https://asciinema.org/a/XAWIgo5JvG3l5YvzxwX3WKEpm)
