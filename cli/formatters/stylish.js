@@ -27,7 +27,7 @@ const getStringValue = (ident, sign, key, value, strDepth) => `${ident}  ${sign}
 const stylish = (diffValues) => {
   const iter = (currentValues, depth) => {
     const gap = getInterval(depth);
-    const stringValues = currentValues.map((diff) => {
+    const lines = currentValues.map((diff) => {
       if (diff.status === 'removed') {
         return getStringValue(gap, minus, diff.key, diff.oldValue, depth);
       }
@@ -42,7 +42,7 @@ const stylish = (diffValues) => {
       }
       return `${gap}    ${diff.key}: ${iter(diff.children, depth + 1)}`;
     });
-    return ['{', ...stringValues, `${gap}}`].join('\n');
+    return ['{', ...lines, `${gap}}`].join('\n');
   };
   return iter(diffValues, 0);
 };
