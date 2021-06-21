@@ -2,11 +2,12 @@ import stylish from './stylish.js';
 import plain from './plain.js';
 
 export default (diff, formatter) => {
-  if (formatter === 'stylish') {
-    return stylish(diff);
+  switch (formatter) {
+    case 'stylish':
+      return stylish(diff);
+    case 'plain':
+      return plain(diff);
+    default:
+      throw new Error(`Unknown name formatter: '${formatter}'!`);
   }
-  if (formatter === 'plain') {
-    return plain(diff);
-  }
-  throw new Error(`Unknown formatter: '${formatter}'!`);
 };
