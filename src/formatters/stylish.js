@@ -24,7 +24,7 @@ const stringify = (value, depth) => {
 
 const getStringValue = (ident, sign, key, value, strDepth) => `${ident}  ${sign} ${key}: ${stringify(value, strDepth + 1)}`;
 
-const stylish = (diffValues) => {
+const makeStylish = (diffValues) => {
   const iter = (currentValues, depth) => {
     const gap = getInterval(depth);
     const lines = currentValues.map((diff) => {
@@ -47,4 +47,4 @@ const stylish = (diffValues) => {
   return iter(diffValues, 0);
 };
 
-export default stylish;
+export default makeStylish;

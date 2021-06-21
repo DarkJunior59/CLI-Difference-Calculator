@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "my twice project",
   "bin": {
-    "gendiff": "bin/gendiff.js"
+    "gendiff": "bin/index.js"
   },
   "engines": {
     "node": ">=14"
   },
-  "main": "bin/gendiff.js",
+  "main": "bin/index.js",
   "scripts": {
     "test": "npx jest --bail"
   },

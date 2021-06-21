@@ -7,7 +7,7 @@ const stringify = (value) => {
   return _.isString(value) ? `'${value}'` : value;
 };
 
-const plain = (diffValues) => {
+export default (diffValues) => {
   const iter = (currentValues, path, depth) => {
     const lines = currentValues.flatMap((diff) => {
       const newPath = depth === 0 ? diff.key : `${path}.${diff.key}`;
@@ -29,5 +29,3 @@ const plain = (diffValues) => {
   };
   return iter(diffValues, '', 0);
 };
-
-export default plain;
