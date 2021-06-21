@@ -27,17 +27,25 @@ $ npm link
 
 To calculate the difference between two files, you should enter the command 'gendiff' and the names of the files separated by a space in the directory with the files. For example: 
 ```sh
-$ gendiff filepath1.json filepath1.json
+$ gendiff file1.json file2.json
  ```
-The program works with the following file extensions: .json, .yaml, .yml.
+The program works with the following file extensions: .json, .yaml, .yml. You can choose different outputs for the calculated difference between files. The program has three output formats: stylish, plain, json. To select the desired format, you must enter -f or --format after the command gendiff and the name of the formatter. For example: 
+```sh
+$ gendiff -f plain file1.json file2.json
+ ```
+
 ### Difference between two flat json files:
 
-[![asciicast](https://asciinema.org/a/b5jATD4h1NTy0IrIU5A4BSLYN.svg)](https://asciinema.org/a/b5jATD4h1NTy0IrIU5A4BSLYN)
+[![asciicast](https://asciinema.org/a/Xfew5fSPxvtI1PjhbAmRu5M55.svg)](https://asciinema.org/a/Xfew5fSPxvtI1PjhbAmRu5M55)
 
 ### Difference between two flat yaml files:
 
-[![asciicast](https://asciinema.org/a/ehnnul4Eph3zhEijMdPxMzqrn.svg)](https://asciinema.org/a/ehnnul4Eph3zhEijMdPxMzqrn)
+[![asciicast](https://asciinema.org/a/ZjjzTHUNyuXnPtSw06zo9FhT5.svg)](https://asciinema.org/a/ZjjzTHUNyuXnPtSw06zo9FhT5)
 
 ### Difference between two files with nested structure:
 
-[![asciicast](https://asciinema.org/a/VwFxggyZD4XwaHvdsSVlN03V3.svg)](https://asciinema.org/a/VwFxggyZD4XwaHvdsSVlN03V3)
+[![asciicast](https://asciinema.org/a/CN24fALSvq9YVFyVOWSK5uX0v.svg)](https://asciinema.org/a/CN24fALSvq9YVFyVOWSK5uX0v)
+
+### Difference between two files with plain format 
+
+[![asciicast](https://asciinema.org/a/qV9RHotEfDfJnnN2QfoM1W3ZV.svg)](https://asciinema.org/a/qV9RHotEfDfJnnN2QfoM1W3ZV)
