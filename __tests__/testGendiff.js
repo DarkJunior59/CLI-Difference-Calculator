@@ -8,12 +8,12 @@ const __dirname = dirname(__filename);
 const getPathFile = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getPathFile(filename), 'utf-8');
 
-const beforeJson = getPathFile('filepath1.json');
-const afterJson = getPathFile('filepath2.json');
-const beforeYaml = getPathFile('filepath1.yaml');
-const afterYaml = getPathFile('filepath2.yaml');
-const beforeYml = getPathFile('filepath1.yml');
-const afterYml = getPathFile('filepath2.yml');
+const beforeJson = getPathFile('file1.json');
+const afterJson = getPathFile('file2.json');
+const beforeYaml = getPathFile('file1.yaml');
+const afterYaml = getPathFile('file2.yaml');
+const beforeYml = getPathFile('file1.yml');
+const afterYml = getPathFile('file2.yml');
 
 const resultStylish = readFile('stylish.txt');
 const resultPlain = readFile('plain.txt');
