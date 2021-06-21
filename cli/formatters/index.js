@@ -7,6 +7,8 @@ export default (diff, formatter) => {
       return stylish(diff);
     case 'plain':
       return plain(diff);
+    case 'json':
+      return JSON.stringify(diff);
     default:
       throw new Error(`Unknown name formatter: '${formatter}'!`);
   }
