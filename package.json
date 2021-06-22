@@ -1,14 +1,14 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "my twice project",
+  "description": "The cli-utility is a data comparison tool that computes and displays the differences between the contents of files.",
   "bin": {
     "gendiff": "bin/index.js"
   },
   "engines": {
     "node": ">=14"
   },
-  "main": "bin/index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "npx jest --bail"
   },
