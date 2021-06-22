@@ -12,8 +12,6 @@ const beforeJson = getPathFile('file1.json');
 const afterJson = getPathFile('file2.json');
 const beforeYaml = getPathFile('file1.yaml');
 const afterYaml = getPathFile('file2.yaml');
-const beforeYml = getPathFile('file1.yml');
-const afterYml = getPathFile('file2.yml');
 
 const resultStylish = readFile('stylish.txt');
 const resultPlain = readFile('plain.txt');
@@ -27,8 +25,6 @@ test('diffirence between two json files with stylish format', () => {
 test('diffirence between two yaml files with stylish format', () => {
   expect(genDiff(beforeYaml, afterYaml))
     .toEqual(resultStylish);
-  expect(genDiff(beforeYml, afterYml))
-    .toEqual(resultStylish);
 });
 
 test('diffirence between two json files with plain format', () => {
@@ -39,8 +35,6 @@ test('diffirence between two json files with plain format', () => {
 test('diffirence between two yaml files with plain format', () => {
   expect(genDiff(beforeYaml, afterYaml, 'plain'))
     .toEqual(resultPlain);
-  expect(genDiff(beforeYml, afterYml, 'plain'))
-    .toEqual(resultPlain);
 });
 
 test('diffirence between two json files with json format', () => {
@@ -50,7 +44,5 @@ test('diffirence between two json files with json format', () => {
 
 test('diffirence between two yaml files with json format', () => {
   expect(genDiff(beforeYaml, afterYaml, 'json'))
-    .toEqual(resultJson);
-  expect(genDiff(beforeYml, afterYml, 'json'))
     .toEqual(resultJson);
 });
