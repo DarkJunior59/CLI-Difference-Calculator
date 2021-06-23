@@ -2,7 +2,7 @@
 
 import program from 'commander';
 
-import genDiff from '../src/index.js';
+import genDiff from '../index.js';
 
 program
   .version('0.0.1')
