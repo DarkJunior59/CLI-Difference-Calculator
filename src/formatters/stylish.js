@@ -1,8 +1,6 @@
 import _ from 'lodash';
 
-const [minus, plus, space] = ['-', '+', ' '];
-
-const getInterval = (depth) => space.repeat(4).repeat(depth);
+const getInterval = (depth) => ' '.repeat(4 * depth);
 
 const stringify = (value, depth) => {
   if (!_.isObject(value)) {
@@ -28,19 +26,18 @@ const makeStylish = (diffValues) => {
   const iter = (currentValues, depth) => {
     const gap = getInterval(depth);
     const lines = currentValues.map((diff) => {
-      if (diff.status === 'removed') {
-        return getStringValue(gap, minus, diff.key, diff.oldValue, depth);
+      switch (diff.status) {
+        case 'removed':
+          return getStringValue(gap, '-', diff.key, diff.oldValue, depth);
+        case 'added':
+          return getStringValue(gap, '+', diff.key, diff.newValue, depth);
+        case 'changed':
+          return `${getStringValue(gap, '-', diff.key, diff.oldValue, depth)}\n${getStringValue(gap, '+', diff.key, diff.newValue, depth)}`;
+        case 'unchanged':
+          return getStringValue(gap, ' ', diff.key, diff.oldValue, depth);
+        default:
+          return `${gap}    ${diff.key}: ${iter(diff.children, depth + 1)}`;
       }
-      if (diff.status === 'added') {
-        return getStringValue(gap, plus, diff.key, diff.newValue, depth);
-      }
-      if (diff.status === 'changed') {
-        return `${getStringValue(gap, minus, diff.key, diff.oldValue, depth)}\n${getStringValue(gap, plus, diff.key, diff.newValue, depth)}`;
-      }
-      if (diff.status === 'unchanged') {
-        return getStringValue(gap, space, diff.key, diff.oldValue, depth);
-      }
-      return `${gap}    ${diff.key}: ${iter(diff.children, depth + 1)}`;
     });
     return ['{', ...lines, `${gap}}`].join('\n');
   };
