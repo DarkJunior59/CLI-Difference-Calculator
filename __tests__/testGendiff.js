@@ -25,12 +25,9 @@ test.each([
 });
 
 test.each([
-  ['json', 'stylish', beforeJson, afterJson, resultStylish],
-  ['yaml', 'stylish', beforeYaml, afterYaml, resultStylish],
-  ['json', 'plain', beforeJson, afterJson, resultPlain],
-  ['yaml', 'plain', beforeYaml, afterYaml, resultPlain],
-  ['json', 'json', beforeJson, afterJson, resultJson],
-  ['yaml', 'json', beforeYaml, afterYaml, resultJson],
-])('diffirence between two %s files with %s format', (formatName, format, file1, file2, result) => {
+  ['stylish', beforeJson, afterJson, resultStylish],
+  ['plain', beforeJson, afterJson, resultPlain],
+  ['json', beforeJson, afterJson, resultJson],
+])('diffirence between two files with %s format', (format, file1, file2, result) => {
   expect(genDiff(file1, file2, format)).toBe(result);
 });

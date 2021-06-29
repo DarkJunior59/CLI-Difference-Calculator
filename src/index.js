@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import path from 'path';
 import genDiff from './fileComparison.js';
-import makeDiff from './formatters/index.js';
+import formatter from './formatters/index.js';
 import parse from './parse.js';
 
 const getFileExt = (fileName) => path.extname(fileName).slice(1);
@@ -15,5 +15,5 @@ export default (filePath1, filePath2, formatterName = 'stylish') => {
   const file1 = parse(extFile1, dataFile1);
   const file2 = parse(extFile2, dataFile2);
   const diff = genDiff(file1, file2);
-  return makeDiff(diff, formatterName);
+  return formatter(diff, formatterName);
 };
