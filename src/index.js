@@ -5,7 +5,7 @@ import makeDiff from './formatters/index.js';
 import parse from './parse.js';
 
 const getFileExt = (fileName) => path.extname(fileName).slice(1);
-const getDataForParse = (fileName) => fs.readFileSync(path.resolve(`${process.cwd()}`, `${fileName}`), 'utf-8');
+const getDataForParse = (fileName) => fs.readFileSync(path.resolve(process.cwd(), fileName), 'utf-8');
 
 export default (filePath1, filePath2, formatterName = 'stylish') => {
   const extFile1 = getFileExt(filePath1);

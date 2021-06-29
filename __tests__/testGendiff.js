@@ -20,20 +20,17 @@ const resultJson = readFile('json.txt');
 test.each([
   [beforeJson, afterJson, resultStylish],
   [beforeYaml, afterYaml, resultStylish],
-])('diffirence between two files with stylish format', (file1, file2, result) => {
+])('diffirence between two nested files', (file1, file2, result) => {
   expect(genDiff(file1, file2)).toBe(result);
 });
 
 test.each([
-  [beforeJson, afterJson, resultPlain],
-  [beforeYaml, afterYaml, resultPlain],
-])('diffirence between two files with plain format', (file1, file2, result) => {
-  expect(genDiff(file1, file2, 'plain')).toBe(result);
-});
-
-test.each([
-  [beforeJson, afterJson, resultJson],
-  [beforeYaml, afterYaml, resultJson],
-])('diffirence between two files with json format', (file1, file2, result) => {
-  expect(genDiff(file1, file2, 'json')).toBe(result);
+  ['json', 'stylish', beforeJson, afterJson, resultStylish],
+  ['yaml', 'stylish', beforeYaml, afterYaml, resultStylish],
+  ['json', 'plain', beforeJson, afterJson, resultPlain],
+  ['yaml', 'plain', beforeYaml, afterYaml, resultPlain],
+  ['json', 'json', beforeJson, afterJson, resultJson],
+  ['yaml', 'json', beforeYaml, afterYaml, resultJson],
+])('diffirence between two %s files with %s format', (formatName, format, file1, file2, result) => {
+  expect(genDiff(file1, file2, format)).toBe(result);
 });
